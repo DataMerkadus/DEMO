@@ -118,6 +118,7 @@
         .header-tabs {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
@@ -179,7 +180,6 @@
     <!-- Pantalla de Acceso -->
     <div id="login-container">
         <div class="login-logos">
-            <!-- LOGOS EN EL LOGIN (Sustituye los enlaces de Google Drive aquí) -->
             <img src="https://lh3.googleusercontent.com/d/1G1ifsvNhrcCViVO8Ckq9YDQ7WgtW4q7I" alt="Logo Merkadus">
         </div>
         <h2>Acceso Restringido</h2>
@@ -194,13 +194,12 @@
         <header>
             <div class="header-left">
                 <div class="header-logos">
-                    <!-- LOGOS EN EL ENCABEZADO (Los mismos enlaces de Google Drive) -->
                     <img src="https://lh3.googleusercontent.com/d/1G1ifsvNhrcCViVO8Ckq9YDQ7WgtW4q7I" alt="Logo Merkadus">
                 </div>
                 
                 <!-- PESTAÑAS DE NAVEGACIÓN INTERNA -->
                 <div class="header-tabs">
-                    <button class="tab-btn active" onclick="cambiarPestana('gestion', this)">📊 Gestión de Mercaderismo </button>
+                    <button class="tab-btn active" onclick="cambiarPestana('gestion', this)">📊 Gestión de Mercaderismo</button>
                     <button class="tab-btn" onclick="cambiarPestana('inteligencia', this)">📊 Inteligencia de Mercaderismo</button>
                     <button class="tab-btn" onclick="cambiarPestana('impulsos', this)">📊 Impulsos</button>
                 </div>
@@ -209,7 +208,7 @@
             <button class="logout-btn" onclick="cerrarSesion()">Salir</button>
         </header>
 
-        <!-- SECCIÓN 1: POWER BI GESTION-->
+        <!-- SECCIÓN 1: POWER BI GESTION -->
         <div id="seccion-gestion" class="content-section active">
             <iframe title="ReportePowerBI" src="https://app.powerbi.com/view?r=eyJrIjoiN2QxNTcwNmQtZmRmOS00ZjRiLTg1NjctMTkwM2E3ZmQ4ZGE2IiwidCI6IjliNzVhNTU3LWQ2MTMtNDgyOC1iYjNjLWU3NGRhN2EwOTk1ZCIsImMiOjR9" allowFullScreen="true"></iframe>
         </div>
@@ -271,9 +270,10 @@
             document.getElementById("dashboard-container").style.display = "none";
             document.getElementById("login-container").style.display = "block";
             document.getElementById("access-code").value = "";
-            cambiarPestana('powerbi', document.querySelector('.tab-btn'));
+            // Corregido: 'powerbi' por 'gestion' para que apunte al botón inicial correctamente
+            cambiarPestana('gestion', document.querySelector('.tab-btn'));
         }
     </script>
 
-  </body>
+</body>
 </html>
