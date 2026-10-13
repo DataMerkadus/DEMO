@@ -178,8 +178,8 @@
 <body>
 
     <!-- Pantalla de Acceso -->
-    <div id="login-container">
-        <div class="login-logos">
+    <div id="login-container" style = "display: none;">
+        <!-- div class="login-logos" --!>
             <img src="https://lh3.googleusercontent.com/d/1G1ifsvNhrcCViVO8Ckq9YDQ7WgtW4q7I" alt="Logo Merkadus">
         </div>
         <h2>Acceso Restringido</h2>
@@ -190,7 +190,7 @@
     </div>
 
     <!-- Contenedor Principal (Oculto inicialmente) -->
-    <div id="dashboard-container">
+    <div id="dashboard-container" style = "display: flex; width: 100vw; height: 100vh; flex-direction: column;">
         <header>
             <div class="header-left">
                 <div class="header-logos">
@@ -205,7 +205,7 @@
                 </div>
             </div>
 
-            <button class="logout-btn" onclick="cerrarSesion()">Salir</button>
+            <button class="logout-btn" style = "display: none;" onclick="cerrarSesion()">Salir</button>
         </header>
 
         <!-- SECCIÓN 1: POWER BI GESTION -->
